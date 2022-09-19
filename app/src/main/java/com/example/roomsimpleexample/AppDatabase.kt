@@ -1,4 +1,4 @@
-package com.example.dblesson
+package com.example.roomsimpleexample
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

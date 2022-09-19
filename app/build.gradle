@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.dblesson'
+    namespace 'com.example.roomsimpleexample'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.dblesson"
+        applicationId "com.example.roomsimpleexample"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -39,8 +39,6 @@ android {
 }
 
 dependencies {
-    def room_version = "2.4.3"
-
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'

@@ -1,7 +1,6 @@
-package com.example.dblesson
+package com.example.roomsimpleexample
 
 import android.app.Application
-import android.provider.DocumentsContract.Root
 import androidx.room.Room
 
 class App: Application() {

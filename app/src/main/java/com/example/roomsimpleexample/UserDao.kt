@@ -1,4 +1,4 @@
-package com.example.dblesson
+package com.example.roomsimpleexample
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -13,11 +13,11 @@ interface UserDao {
     fun getAll(): Flow<List<User>>
 
     @Insert(entity = User::class)
-    fun insert(user: NewUser)
+    suspend fun insert(user: NewUser)
 
     @Delete
-    fun delete(user: User)
+    suspend fun delete(user: User)
 
     @Update
-    fun update(user: User)
+    suspend fun update(user: User)
 }

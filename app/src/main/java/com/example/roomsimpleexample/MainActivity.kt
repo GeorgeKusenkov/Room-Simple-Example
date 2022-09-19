@@ -1,4 +1,4 @@
-package com.example.dblesson
+package com.example.roomsimpleexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.example.dblesson.databinding.ActivityMainBinding
+import com.example.roomsimpleexample.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {

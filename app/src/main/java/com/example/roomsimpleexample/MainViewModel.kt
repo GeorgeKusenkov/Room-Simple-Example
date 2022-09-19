@@ -1,9 +1,7 @@
-package com.example.dblesson
+package com.example.roomsimpleexample
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -15,11 +13,9 @@ class MainViewModel(private val userDao: UserDao): ViewModel() {
             started = SharingStarted.WhileSubscribed(5000L),
             initialValue = emptyList()
         )
-
     fun onAddBtn() {
         val size = allUsers.value.size
-//        viewModelScope.launch {
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch {
             userDao.insert(
                 NewUser(
                     firstName = "Name $size",
@@ -29,10 +25,8 @@ class MainViewModel(private val userDao: UserDao): ViewModel() {
             )
         }
     }
-
     fun onUpdateBtn() {
-//        viewModelScope.launch {
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch {
             allUsers.value.lastOrNull()?.let {
                 val user = it.copy(
                     lastName = "Petrov"
@@ -41,9 +35,8 @@ class MainViewModel(private val userDao: UserDao): ViewModel() {
             }
         }
     }
-
     fun onDeleteBtn() {
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch {
             allUsers.value.lastOrNull()?.let {userDao.delete(it)}
         }
     }
