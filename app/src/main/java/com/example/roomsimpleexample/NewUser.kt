@@ -3,7 +3,7 @@ package com.example.roomsimpleexample
 import androidx.room.ColumnInfo
 import androidx.room.PrimaryKey
 
-data class NewUser (
+data class NewUser(
     @PrimaryKey
     @ColumnInfo(name = "id") val id: Int? = null,
     @ColumnInfo(name = "firstName") val firstName: String,

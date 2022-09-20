@@ -28,7 +28,7 @@ class MainViewModel(private val userDao: UserDao): ViewModel() {
     fun onUpdateBtn() {
         viewModelScope.launch {
             allUsers.value.lastOrNull()?.let {
-                val user = it.copy(
+                val user = it.user.copy(
                     lastName = "Petrov"
                 )
                 userDao.update(user)
@@ -37,7 +37,7 @@ class MainViewModel(private val userDao: UserDao): ViewModel() {
     }
     fun onDeleteBtn() {
         viewModelScope.launch {
-            allUsers.value.lastOrNull()?.let {userDao.delete(it)}
+            allUsers.value.lastOrNull()?.let {userDao.delete(it.user)}
         }
     }
 }
